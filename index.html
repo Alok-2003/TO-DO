@@ -7,17 +7,22 @@
     <title>TO-DO list</title>
 </head>
 <body>
-    <h1><span1>TO</span1>-<span>DO</span> List</h1>
-    <input type="text" placeholder="Enter your task">
-    <br>
-    <button class="Addbtn">Add Task</button>
-    <ol>
-        <li>Eat <button class="delete">Delete</button></li>
-        <li>Code <button class="delete">Delete</button></li>
-        <li>Sleep <button class="delete">Delete</button></li>
-        <li>Repeat <button class="delete">Delete</button></li>
-    </ol>
-    
+    <div class="app-card">
+        <h1><span1>TO</span1>-<span>DO</span> List</h1>
+        <input type="text" placeholder="Enter your task">
+        <button class="Addbtn">Add Task</button>
+        <ol>
+        </ol>
+        <div class="footer">
+            <div class="count">0 items left</div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <button class="clear-completed">Clear Completed</button>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>

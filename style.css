@@ -1,62 +1,88 @@
 * {
     /* font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-    font-size: 30px;
+    box-sizing: border-box;
 }
 body {
     text-align: center;
-    background-color: #C1AEFC;
-    border: 3px black solid;
-    border-radius: 50px;
-    margin: 50px 200px 0px 200px;
-    padding-bottom: 40px;
+    background: linear-gradient(135deg,#c7b6ff 0%, #b39bff 70%);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
 }
 h1 {
     
     margin:15px 0px;
     color: #252A34;
-    font-size: 50px;
+    font-size: 40px;
+    line-height: 1.2;
 }
 span1{
-    font-size: 50px;
+    font-size: 40px;
     color: red;
 }
 span{
-    font-size: 50px;
+    font-size: 40px;
     color: #0FFF50;
 }
 input{
-    border:none;
+    border:1px solid rgba(0,0,0,0.15);
     /* color: #018188 ; */
-    border-radius: 7px;
-    text-align: center;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    max-width: 520px;
+    padding: 12px 14px;
+    font-size: 16px;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+input:focus{
+    border-color: #7c5cff;
+    box-shadow: 0 0 0 4px rgba(124,92,255,0.15);
 }
 
 .Addbtn {
-    background-color: #08d9d6c7;
+    background-color: #7c5cff;
     color: white;
-    margin: 10px 0px 10px 0px;
-    border: 1px solid black;
-    border-radius: 5px;
+    margin: 12px 0px 20px 0px;
+    border: none;
+    border-radius: 10px;
     text-align: center;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(124,92,255,0.3);
+    transition: transform .12s ease, box-shadow .2s ease, opacity .2s ease;
 }
+.Addbtn:hover{ opacity: .95; }
+.Addbtn:active{ transform: translateY(1px); box-shadow: 0 3px 10px rgba(124,92,255,0.35); }
+
 ol {
-    display: grid;
-    justify-items: center;
-    margin: 0px;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0px 0 16px 0;
 }
 
 li {
-    padding-left: 5px;
-    width: 400px;
-    border: 1px black solid;
-    
-    border-radius: 5px;
-    margin: 10px 0px 10px 0px;
-    align-items: flex-end;
+    padding: 10px 10px 10px 12px;
+    width: 100%;
+    max-width: 520px;
+    border: 1px solid #e6e6f0;
+    background: #ffffffcc;
+    backdrop-filter: blur(2px);
+    border-radius: 12px;
+    align-items: center;
     display: flex;
     justify-content: space-between;
-  }
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
 .delete {
     /* margin-left: 100px; */
     background-color: #FF2E63;
@@ -66,3 +92,83 @@ li {
     border-radius: 5px;
 }
 
+.completed .task-text {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.toggle {
+  background-color: #00c2a8;
+  color: white;
+  border: none;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-right: 6px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  gap: 8px;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+}
+
+.filter-btn {
+  background: #f1efff;
+  border: 1px solid #d7d3ff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: #3a2e83;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #7c5cff;
+  border-color: #7c5cff;
+  color: white;
+}
+
+.clear-completed {
+  background: #FF2E63;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.edit {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 2px 4px;
+}
+
+.task-text { flex: 1; text-align: left; color: #252A34; }
+
+.app-card{
+  width: 100%;
+  max-width: 620px;
+  background: #dadadaaa;
+  border: 1px solid #e2ddff;
+  border-radius: 20px;
+  padding: 28px 22px 22px;
+  box-shadow: 0 20px 40px rgba(54, 33, 160, 0.18);
+}
+
+.app-card h1{ margin-top: 0; }
+
+@media (max-width: 520px){
+  h1, span, span1{ font-size: 28px; }
+  .footer{ flex-direction: column; align-items: stretch; gap: 10px; }
+  .filters{ justify-content: center; }
+  .clear-completed{ width: 100%; }
+}
